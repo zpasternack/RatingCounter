@@ -14,7 +14,7 @@ A default instance is provided via the `defaultCounter` class property.
 
 You'd use it like so:
 
-    FARatingCounter.defaultCounter.fetchNumberOfRatings(appID: appInfo.ID) {
+    FARatingCounter.defaultCounter.fetchNumberOfRatings(appID: "391439366") {
         success, number in
         // Do something with number.
     }
