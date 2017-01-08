@@ -24,6 +24,8 @@
 		A26BDB9D1E229342008D130E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A26BDB9F1E229342008D130E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A26BDBA51E229369008D130E /* FARatingCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FARatingCounter.swift; sourceTree = "<group>"; };
+		A2E4F7101E2298E600C01F30 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A2E4F7111E2298E600C01F30 /* Readme.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.markdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,8 @@
 		A26BDB871E229342008D130E = {
 			isa = PBXGroup;
 			children = (
+				A2E4F7101E2298E600C01F30 /* LICENSE */,
+				A2E4F7111E2298E600C01F30 /* Readme.markdown */,
 				A26BDB921E229342008D130E /* RatingCounter */,
 				A26BDB911E229342008D130E /* Products */,
 			);
@@ -301,6 +305,7 @@
 				A26BDBA41E229342008D130E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
