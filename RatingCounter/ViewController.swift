@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -26,7 +26,9 @@ class ViewController: UIViewController, UITableViewDataSource {
 		AppInfo(ID: "506003812", name:"Paper", ratings: nil),
 		AppInfo(ID: "NOT_A_REAL_APP", name:"Not A Real App", ratings: nil)
 	]
-	
+}
+
+extension ViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return ratings.count;
 	}
@@ -42,15 +44,15 @@ class ViewController: UIViewController, UITableViewDataSource {
 			aCell.accessoryView = nil
 		}
 		else {
-			FARatingCounter.defaultCounter.fetchNumberOfRatings(appID: appInfo.ID) {
-				success, number in
+			FARatingCounter.default.fetchNumberOfRatings(appID: appInfo.ID) {
+				(success, number) in
 
 				self.ratings[indexPath.row].ratings = success ? number : 0
 				tableView.cellForRow(at: indexPath)?.accessoryView = nil
-				self.tableView.reloadData()
+				tableView.reloadRows(at: [indexPath], with: .automatic)
 			}
 			
-			let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+			let spinner = UIActivityIndicatorView(style: .gray)
 			spinner.startAnimating()
 			aCell.accessoryView = spinner
 		}

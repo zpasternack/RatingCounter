@@ -2,7 +2,7 @@
 //  FARatingCounter.swift
 //
 //  Created by Zacharias Pasternack on 4/28/15.
-//  Copyright (c) 2015-2017 FatApps, LLC. All rights reserved.
+//  Copyright (c) 2015-2019 FatApps, LLC. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -31,10 +31,6 @@ import Foundation
 
 @objc class FARatingCounter: NSObject {
 	
-	class var defaultCounter: FARatingCounter {
-		return defaultInstance
-	}
-	
 	// Ideally this function would pass an Int?, but that makes it incompatible with Obj-C.
 	// Instead, pass Bool for success, Int for number (which will be zero if !success).
 	typealias fetchRatingsCompletion = (Bool, Int) -> ()
@@ -42,7 +38,8 @@ import Foundation
 	func fetchNumberOfRatings(appID: String, completion: @escaping fetchRatingsCompletion) {
 		
 		let appStoreURL = URL(string: "https://itunes.apple.com/lookup?id=\(appID)")
-		let task = URLSession.shared.dataTask(with: appStoreURL!, completionHandler: { (data, response, error) in
+		let task = URLSession.shared.dataTask(with: appStoreURL!, completionHandler: {
+			(data, response, error) in
 			
 			var gotResult = false
 			var ratingsCount = 0
@@ -67,5 +64,5 @@ import Foundation
 		task.resume()
 	}
 	
-	private static let defaultInstance = FARatingCounter()
+	static let `default` = FARatingCounter()
 }
