@@ -35,7 +35,7 @@ import Foundation
 	// Instead, pass Bool for success, Int for number (which will be zero if !success).
 	typealias fetchRatingsCompletion = (Bool, Int) -> ()
 	
-	func fetchNumberOfRatings(appID: String, completion: @escaping fetchRatingsCompletion) {
+	@objc func fetchNumberOfRatings(appID: String, completion: @escaping fetchRatingsCompletion) {
 		
 		let appStoreURL = URL(string: "https://itunes.apple.com/lookup?id=\(appID)")
 		let task = URLSession.shared.dataTask(with: appStoreURL!, completionHandler: {
@@ -64,5 +64,5 @@ import Foundation
 		task.resume()
 	}
 	
-	static let `default` = FARatingCounter()
+	@objc(defaultCounter) static let `default` = FARatingCounter()
 }
