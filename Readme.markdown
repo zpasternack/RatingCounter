@@ -10,7 +10,7 @@ how many ratings your app has, typically near the UI where one could tap to rate
 
     func fetchNumberOfRatings(appID: String, completion: @escaping fetchRatingsCompletion)
 
-A default instance is provided via the `default` class property.
+A default instance is provided via the `default` class property (or, in Objective-C, `defaultCounter`).
 
 You'd use it like so:
 
