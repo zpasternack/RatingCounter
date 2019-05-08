@@ -3,7 +3,7 @@
 //  RatingsGetter
 //
 //  Created by Zacharias Pasternack on 4/8/16.
-//  Copyright © 2016 FatApps, LLC. All rights reserved.
+//  Copyright © 2019 FatApps, LLC. All rights reserved.
 //
 
 import UIKit
@@ -45,10 +45,9 @@ extension ViewController: UITableViewDataSource {
 		}
 		else {
 			FARatingCounter.default.fetchNumberOfRatings(appID: appInfo.ID) {
-				(success, number) in
+				[weak self] (success, number) in
 
-				self.ratings[indexPath.row].ratings = success ? number : 0
-				tableView.cellForRow(at: indexPath)?.accessoryView = nil
+				self?.ratings[indexPath.row].ratings = success ? number : 0
 				tableView.reloadRows(at: [indexPath], with: .automatic)
 			}
 			
