@@ -26,7 +26,7 @@ The App Store has a feed which provides, given an app ID, a bunch of information
 It vends JSON. `FARatingCounter` downloads this data (using `NSURLSession`), and parses it (via 
 `NSJSONSerialization`) to get the app review count.
 
-`FARatingCounter` is written in Swift 4.2. It can also be called from Objective-C.
+`FARatingCounter` is written in Swift 5. It can also be called from Objective-C.
 
 
 ### Who's responsible for this? ###
@@ -37,4 +37,4 @@ out [my blog](http://zpasternack.org), or follow me on [Twitter](https://twitter
 
 ### License ###
 
-The code is provided under a Modified BSD License. See the LICENSE file for more info.
+The code is provided under a Modified BSD License. See the [LICENSE](LICENSE) file for more info.
