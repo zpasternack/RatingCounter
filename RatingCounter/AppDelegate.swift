@@ -3,7 +3,7 @@
 //  RatingsGetter
 //
 //  Created by Zacharias Pasternack on 4/8/16.
-//  Copyright © 2016 FatApps, LLC. All rights reserved.
+//  Copyright © 2019 FatApps, LLC. All rights reserved.
 //
 
 import UIKit
